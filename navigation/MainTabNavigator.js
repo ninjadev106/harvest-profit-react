@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Image } from 'react-native';
+import { Image,Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
@@ -8,7 +8,7 @@ import Colors from '../constants/Colors';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import FieldsScreen from '../screens/FieldsScreen';
+import FieldScreen from '../screens/FieldScreen';
 
 export default TabNavigator(
   {
@@ -18,11 +18,11 @@ export default TabNavigator(
     Links: {
       screen: LinksScreen,
     },
-    Fields: {
-      screen: FieldsScreen,
-    },
     Settings: {
       screen: SettingsScreen,
+    },
+    Fields: {
+      screen: FieldScreen,
     },
   },
   {
@@ -35,28 +35,34 @@ export default TabNavigator(
             // iconName = Platform.OS === 'ios'
             //   ? `ios-information-circle${focused ? '' : '-outline'}`
             //   : 'md-information-circle';
-            iconName = "app_icon.png";
+            iconName = '';
             break;
           case 'Links':
             // iconName = Platform.OS === 'ios'
             //   ? `ios-link${focused ? '' : '-outline'}`
             //   : 'md-link';
-            iconName = "current_doller_btn.png";
-            break;
-          case 'Fields':
-            iconName = "fields.png";
+            iconName = '';
             break;
           case 'Settings':
             // iconName = Platform.OS === 'ios'
             //   ? `ios-options${focused ? '' : '-outline'}`
             //   : 'md-options';
-            iconName = "setting_btn.png";
+            iconName = '';
+              break;
+          case 'Fields':
+            // iconName = Platform.OS === 'ios'
+            //   ? `ios-options${focused ? '' : '-outline'}`
+            //   : 'md-options';
+            iconName = '';
         }
         return (
-          <Image
-            source={require('../assets/images/current_doller_btn.png')} 
-            style={{width: 10, height: 10}}           
-          />
+          // <Ionicons
+          //   name={iconName}
+          //   size={28}
+          //   style={{ marginBottom: -3 }}
+          //   color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+          // />
+          <Image source={ require('../assets/images/robot-prod.png') } style={{width:20, height:20}} />
         );
       },
     }),

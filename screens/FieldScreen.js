@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 
-export default class FieldsScreen extends React.Component {
+export default class FieldScreen extends React.Component {
   static navigationOptions = {
     title: 'app.json',
   };
